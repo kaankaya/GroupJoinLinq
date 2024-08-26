@@ -24,8 +24,7 @@ class Program
         daha sonrası eşleştirme kriterlerimizi belirtiriyoruz.Class Id Lere göre eşleştirme yapıyoruz
         daha sonra anonim bir nesne yapıp çıkarmak istediğimiz verilerimizi seçiyoruz.
          */
-        var studentsWithClass = classess.GroupJoin(
-            students,
+        var studentsWithClass = classess.GroupJoin(students,
             clas => clas.ClassId,
             student => student.ClassId,
             (clas, studentGroup) => new
