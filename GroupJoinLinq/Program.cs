@@ -24,7 +24,7 @@ class Program
         daha sonrası eşleştirme kriterlerimizi belirtiriyoruz.Class Id Lere göre eşleştirme yapıyoruz
         daha sonra anonim bir nesne yapıp çıkarmak istediğimiz verilerimizi seçiyoruz.
          */
-        var studentsClass = classess.GroupJoin(
+        var studentsWithClass = classess.GroupJoin(
             students,
             clas => clas.ClassId,
             student => student.ClassId,
@@ -34,14 +34,14 @@ class Program
                 Students = studentGroup.ToList()
             });
 
-        foreach (var item in studentsClass)
+        foreach (var item in studentsWithClass)
         {
-            Console.WriteLine($"Sınıf Adı : {item.ClassName}");
+            Console.WriteLine($"Sınıfın Adı : {item.ClassName}");
             foreach (var student in item.Students)
             {
-                Console.WriteLine($"Bu sınıftaki öğrenciler : {student.StudentName}");
+                Console.WriteLine($"Sınıfa Kayıtlı öğrenciler : {student.StudentName}");
             }
-            Console.WriteLine(); 
+            Console.WriteLine("-------------------------------------"); 
         }
 
 
